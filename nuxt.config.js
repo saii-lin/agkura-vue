@@ -1,4 +1,3 @@
-
 export default {
   mode: 'spa',
   /*
@@ -13,6 +12,9 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { src: "/jquery-3.4.1.min.js" }
     ]
   },
   /*
@@ -23,6 +25,7 @@ export default {
   ** Global CSS
   */
   css: [
+    "~/assets/normalize.css"
   ],
   /*
   ** Plugins to load before mounting the App
