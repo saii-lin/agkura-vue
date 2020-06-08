@@ -11,12 +11,18 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        href: "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap",
+        rel: "stylesheet"
+      }
     ],
     script: [
       { src: "/jquery-3.4.1.min.js" }
     ]
   },
+
+
   /*
   ** Customize the progress-bar color
   */
