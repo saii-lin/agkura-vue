@@ -3,22 +3,22 @@
     <div class="transaction_content max-width">
       <h2>
         —
-        <img class="logo_icon" src="../static/images/logo-icon.png" />程式交易—
+        <img class="logo_icon" src="/images/logo-icon.png" />程式交易—
       </h2>
       <div class="icon1">
-        <div class="icone1-1 icone1-2">
-          <img src="../static/images/icon1.png" alt />
+        <div :class="['icone1-1', 'icone1-2', animatedTop ? 'animation' : '']">
+          <img src="/images/icon1.png" alt />
           <p>研發交易邏輯</p>
         </div>
         <div class="icone1-1 icone1-3">
-          <img src="../static/images/icon2.png" alt />
+          <img src="/images/icon2.png" alt />
           <p>回測參數調整</p>
         </div>
-        <div class="icone1-1 icone1-4">
-          <img src="../static/images/icon3.png" alt />
+        <div :class="['icone1-1', 'icone1-4', animatedTop ? 'animation' : '']">
+          <img src="/images/icon3.png" alt />
           <p>優化策略細節</p>
         </div>
-        <div class="line"></div>
+        <div :class="['line', animatedTop ? 'animation' : '']"></div>
       </div>
       <div class="icon1_content">
         <p>
@@ -26,7 +26,7 @@
         </p>
       </div>
       <h2>程式交易的優勢</h2>
-      <div class="icon2">
+      <div :class="['icon2', animatedBottom ? 'animation' : '']">
         <a-icon
           v-for="(icon, index) in icon2s"
           :key="index"
@@ -53,25 +53,20 @@ export default {
   components: {
     AIcon
   },
+  props: {
+    animatedTop: {
+      type: Boolean
+    },
+    animatedBottom: {
+      type: Boolean
+    }
+  },
   data: function() {
     return {
       icon2s: icon2s_json
     };
   }
 };
-$(window).scroll(function() {
-  let scrollTop = $(this).scrollTop();
-  let width = $(window).width();
-  let transactionOffset = $(".transaction").offset().top;
-  if (scrollTop > transactionOffset - 300) {
-    $(".icone1-2").addClass("animation");
-    $(".icone1-4").addClass("animation");
-    $(".icon1 .line").addClass("animation");
-  }
-  if (scrollTop > transactionOffset + 100) {
-    $(".icon2-1").addClass("animation");
-  }
-});
 </script>
 
 <style>

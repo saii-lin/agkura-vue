@@ -12,7 +12,12 @@
               加上大部份投資人都缺乏研究和看盤買賣的時間，
               所以近年越來越流行的程式交易, 或許就是您等待已久的夢幻工具。
             </p>
-            <div class="understanding">馬上了解→</div>
+            <div
+              class="understanding"
+              v-scroll-to="{ el: '.transaction', offset: -50 }"
+            >
+              馬上了解→
+            </div>
           </div>
         </div>
       </div>
@@ -26,7 +31,7 @@ export default {};
 
 <style>
 header {
-  background: url(../static/images/back1-1280x852.jpg) no-repeat;
+  background: url(/images/back1-1280x852.jpg) no-repeat;
   background-size: cover;
   height: 100vh;
   position: relative;

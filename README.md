@@ -1,22 +1,23 @@
-# demo
+> npx create-nuxt-app 名字
+> Project name 專案名字叫做? 直接 Enter
+> Project description 專案說明是? 直接 Enter
+> Author name 作者是? 直接 Enter
+> Choose programming language 選擇程式語言 - JavaScript
+> Choose the package manager 選擇套件管理器 - Npm
+> Choose UI framework 選擇 UI 框架 - None
+> Choose custom server framework 選擇自訂的 server 框架 - None
+> Choose Nuxt.js modules 選擇 Nuxt.js 套件 - 都不選, 直接 Enter
+> Choose linting tools 選擇檢查工具 - 都不選, 直接 Enter
+> Choose test framework 選擇測試框架 - None
+> Choose rendering mode 選擇渲染模式 - Single Page App(SPA)
+> Choose development tools 選擇開發工具 - jsconfig.json
 
-> My exquisite Nuxt.js project
+> cd 名字
+> code .
+> ctrl + shift + `
+> npm run dev
 
-## Build Setup
+要加東西在 head?
+到 nuxt.config.js 裡面的 head 加
 
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+npm install 套件名字

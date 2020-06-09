@@ -1,10 +1,10 @@
 <template>
-  <div class="company">
+  <div :class="['company', animated ? 'animation' : '']">
     <div class="company_text max-width">
       <div class="company_text-box">
         <h2>
           —
-          <img class="logo_icon" src="../static/images/logo-icon.png" alt />公司團隊—
+          <img class="logo_icon" src="/images/logo-icon.png" alt />公司團隊—
         </h2>
         <p>
           來自世界各地的金融優秀人才，擁有技術精湛的專業分析能力
@@ -20,7 +20,7 @@
       <div class="company_text-box">
         <h2>
           —
-          <img class="logo_icon" src="../static/images/logo-icon.png" alt />公司願景—
+          <img class="logo_icon" src="/images/logo-icon.png" alt />公司願景—
         </h2>
         <p class="company_text1">
           在金融投資產業深耕，整合過往的投資操作實務經驗，
@@ -33,19 +33,13 @@
 </template>
 
 <script>
-export default {};
-$(window).scroll(function() {
-  let scrollTop = $(this).scrollTop();
-  let width = $(window).width();
-  let companyOffset = $(".company").offset().top;
-
-  if (scrollTop > companyOffset - 300) {
-    $(".company_pic1").addClass("animation");
-    $(".company_pic2").addClass("animation");
-    $(".company h2").addClass("animation");
-    $(".company_text").addClass("animation");
+export default {
+  props: {
+    animated: {
+      type: Boolean
+    }
   }
-});
+};
 </script>
 
 <style>
@@ -63,7 +57,7 @@ $(window).scroll(function() {
 }
 
 .company_pic1 {
-  background: url(../static/images/about1.jpeg);
+  background: url(/images/about1.jpeg);
   transform: translatex(-300px);
   filter: opacity(0);
 }
@@ -80,7 +74,7 @@ $(window).scroll(function() {
 }
 
 .company_pic2 {
-  background: url(../static/images/about2.jpeg);
+  background: url(/images/about2.jpeg);
   transform: translatex(300px);
   filter: opacity(0);
 }
@@ -136,19 +130,27 @@ $(window).scroll(function() {
   width: 50%;
   margin: 20px 0px;
 }
-.address h2.animation {
-  animation-name: headerTitle;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-}
-.company_pic1.animation {
+
+.animation .company_pic1 {
   animation-name: company_pic1;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
-.company_pic2.animation {
+.animation .company_pic2 {
   animation-name: company_pic2;
   animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+.company.animation h2 {
+  animation-name: headerTitle;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+.animation .company_text {
+  animation-name: headerTitle;
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
   animation-fill-mode: forwards;
 }
 </style>

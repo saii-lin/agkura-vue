@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="icon2-1"><img :src="src" alt /></div>
+    <div class="icon2-1">
+      <img :src="src" alt />
+    </div>
     <p>{{ text }}</p>
   </div>
 </template>
@@ -72,7 +74,7 @@ export default {
   left: calc(50% - 91px / 2);
   font-size: 14px;
 }
-.icon2-1.animation {
+.animation .icon2-1 {
   animation-name: icon2-1;
   animation-duration: 0.8s;
   animation-fill-mode: forwards;

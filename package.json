@@ -11,7 +11,9 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-scroll": "^2.1.13",
+    "vue-scrollto": "^2.18.1"
   },
   "devDependencies": {}
 }

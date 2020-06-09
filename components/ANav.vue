@@ -1,65 +1,25 @@
 <template>
   <nav>
-    <img class="logo" src="../static/images/logo.png" alt />
+    <img class="logo" src="/images/logo.png" alt v-scroll-to="'header'" />
     <ul>
       <li class="language">
         <a href="/cn/index.html">简体中文</a>/
         <a href="/zh/index.html">繁體中文</a>
       </li>
-      <li id="index">首頁</li>
-      <li id="transaction">程式交易</li>
-      <li id="about">為何選擇AGKURA</li>
-      <li id="address">連絡我們</li>
+      <li id="index" v-scroll-to="'header'">首頁</li>
+      <li id="transaction" v-scroll-to="{ el: '.transaction', offset: -50 }">
+        程式交易
+      </li>
+      <li id="about" v-scroll-to="{ el: '.about', offset: -50 }">
+        為何選擇AGKURA
+      </li>
+      <li id="address" v-scroll-to="{ el: '.email', offset: -50 }">連絡我們</li>
     </ul>
-    <div class="hbg">
-      <div class="hbg_line top"></div>
-      <div class="hbg_line on"></div>
-      <div class="hbg_line bottom"></div>
-    </div>
   </nav>
 </template>
 
 <script>
 export default {};
-$(".hbg").click(function() {
-  hbg();
-});
-$("#index").click(function() {
-  $("html,body").animate({ scrollTop: $("header").offset().top }, 666);
-  hbg();
-});
-$("#transaction").click(function() {
-  $("html,body").animate(
-    { scrollTop: $(".transaction").offset().top - 50 },
-    666
-  );
-  hbg();
-});
-$("#about").click(function() {
-  $("html,body").animate({ scrollTop: $(".about").offset().top }, 666);
-  hbg();
-});
-$("#address").click(function() {
-  $("html,body").animate({ scrollTop: $(".email").offset().top - 50 }, 666);
-  hbg();
-});
-$(".logo").click(function() {
-  $("html,body").animate({ scrollTop: $("header").offset().top - 50 }, 666);
-  hbg();
-});
-$(".understanding").click(function() {
-  $("html,body").animate(
-    { scrollTop: $(".transaction").offset().top - 50 },
-    666
-  );
-});
-function hbg() {
-  $(".hbg").toggleClass("active");
-  $(".top").toggleClass("active");
-  $(".bottom").toggleClass("active");
-  $(".on").toggleClass("active");
-  $("nav ul").toggleClass("active");
-}
 </script>
 
 <style>
@@ -69,6 +29,7 @@ nav {
   width: 100%;
   z-index: 10;
   box-shadow: 10px 0 10px #424746;
+  top: 0px;
 }
 
 nav .logo {
