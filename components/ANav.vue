@@ -21,6 +21,45 @@
 
 <script>
 export default {};
+$(".hbg").click(function() {
+  hbg();
+});
+$("#index").click(function() {
+  $("html,body").animate({ scrollTop: $("header").offset().top }, 666);
+  hbg();
+});
+$("#transaction").click(function() {
+  $("html,body").animate(
+    { scrollTop: $(".transaction").offset().top - 50 },
+    666
+  );
+  hbg();
+});
+$("#about").click(function() {
+  $("html,body").animate({ scrollTop: $(".about").offset().top }, 666);
+  hbg();
+});
+$("#address").click(function() {
+  $("html,body").animate({ scrollTop: $(".email").offset().top - 50 }, 666);
+  hbg();
+});
+$(".logo").click(function() {
+  $("html,body").animate({ scrollTop: $("header").offset().top - 50 }, 666);
+  hbg();
+});
+$(".understanding").click(function() {
+  $("html,body").animate(
+    { scrollTop: $(".transaction").offset().top - 50 },
+    666
+  );
+});
+function hbg() {
+  $(".hbg").toggleClass("active");
+  $(".top").toggleClass("active");
+  $(".bottom").toggleClass("active");
+  $(".on").toggleClass("active");
+  $("nav ul").toggleClass("active");
+}
 </script>
 
 <style>
